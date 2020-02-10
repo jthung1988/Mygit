@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="CSS/index.css">
+</head>
+<body>
+  <div id="content">
+    <div id="center"><a href="#"><img src="" alt="" id="centerImg"></a></div>
+    <div class="sub" id="sub1"><img src="images/hw0.png" alt="" class="imgsub" style="top: 1000px;"></div>
+    <div class="sub" id="sub2"><img src="images/hw1.png" alt="" class="imgsub"></div>
+    <div class="sub" id="sub3"><img src="images/hw2.png" alt="" class="imgsub"></div>
+    <div class="sub" id="sub4"><img src="images/hw3.png" alt="" class="imgsub"></div>
+    <div class="sub" id="sub5"><img src="images/hw4.png" alt="" class="imgsub"></div>
+  </div>
+    <script>
+      //setdiv
+      const PI = 3.1414926;
+      var disR = 300;
+      var subdiv = document.getElementsByClassName("sub");
+      var centerDiv = document.getElementById("center");
+      var centerImg = document.getElementById("centerImg");
+      var x,y,rad;
+      
+      for(let i=0; i<subdiv.length;i++){
+        rad = i*2*PI/5;
+        //center(400,400)
+        x =450-50+ Math.cos(rad+54/360*2*PI)*disR;
+        y =450-50+ Math.sin(rad+54/360*2*PI)*disR;
+        console.log(x+","+y);
+        subdiv[i].style.left = x+ "px";
+        subdiv[i].style.top = y+ "px";
+        console.log(subdiv[i]);
+      }
+      //centerDivMotion
+
+      function centerMotion(){
+        centerImg.style.animation = "imgblow 6s ease 1";
+        setTimeout(function(){
+          centerImg.style.animation ="";
+          centerImg.style.display = "none";
+        },6000);
+        for(let i=0; i<subdiv.length ;i++){
+          subdiv[i].style.visibility = "hidden";
+        }
+      } 
+
+      
+      centerDiv.addEventListener("mousedown",function(){
+        centerMotion();
+      })
+      // submotion
+      for(let i=0; i<subdiv.length; i++){
+        subdiv[i].addEventListener("mouseover",function(){
+          centerImg.src = "images/hw" + i + ".png";
+        })
+      }
+    </script>
+</body>
+</html>

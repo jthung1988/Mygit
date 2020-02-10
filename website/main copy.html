@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JShomework</title>
+    <link rel="stylesheet" href="CSS/main.css">
+    <style>
+    </style>
+    <script src="JavaScript/main.js"></script>
+    <script>
+
+
+    </script>
+</head>
+
+<body>
+    <div>
+        <input type="button" value="HW1" class="mainbtn">
+        <input type="button" value="HW2" class="mainbtn">
+        <input type="button" value="HW3" class="mainbtn">
+        <input type="button" value="HW4" class="mainbtn">
+        <input type="button" value="HW5" class="mainbtn">
+    </div>
+    <div class="p1">
+        <h1>1. 使用Table印出九九乘法表</h1>
+        <table>
+            <script>f1();</script>
+        </table>
+    </div>
+    <div class="p2">
+        <h1>2. 製作表單包含下列欄位:</h1>
+        <div>
+            <form id="form1" action="#" method="POST">
+                <fieldset>
+                    <legend>Form Check</legend>
+                    <div class="inputlist">
+                        <label for="userName">姓名:</label>
+                        <input type="text" id="userName" name="userName" placeholder="請輸入姓名">
+                        <img class="imgcheck" id="img_ckname" alt=""><label id="t_ckname"></label>
+                        <p>(1.不可空白，2.至少兩個字以上，3.必須全部為中文字)</p>
+                    </div>
+                    <div class="inputlist">
+                        <label for="pwd">密碼:</label>
+                        <input type="password" id="pwd" name="pwd" placeholder="請輸入密碼">
+                        <img class="imgcheck" id="img_ckpwd" alt=""><label id="t_ckpwd"></label>
+                        <p>(1.不可空白，2.至少6個字且必須包含英文字母、數字、特殊字元[!@#$%^&*])</p>
+                    </div>
+                    <div class="inputlist">
+                        <label for="date1">日期:</label>
+                        <input type="text" id="date1" name="date1" placeholder="ex:2000/2/29">
+                        <img class="imgcheck" id="img_ckdate" alt=""><label id="t_ckdate"></label>
+                        <p>格式:西元年/月/日(yyyy/MM/dd)</p>
+                    </div>
+                    <div class="btn">
+                        <input type="button" value="送出" onclick="com()">
+                        <input type="reset" value="清除">
+                    </div>
+                    <script>p2();</script>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+    <div class="p3">
+        <h1>3.評點製作</h1>
+        <hr>
+        <div id="starcontent">
+            <div id="divbackstar" class="backstar">
+            </div>
+
+            <div id="divfrontstar" class="frontstar">
+            </div>
+        </div>
+        <div id="score">
+            <p>評分</p>
+
+        </div>
+        <input type="button" id="starreset" name="starreset" value="重新評分">
+        <script>
+            p3();
+
+        </script>
+    </div>
+    <div class="p4">
+        <h1>4.廣告輪播</h1>
+        <div id="contenView" class="contentView">
+            <div class="compose">
+                <div class="leftdiv">
+                </div>
+                <div class="maindiv">
+                    <a href=""><img src="images/Desktop-Background-0.jpg" alt="" id="imgleft"></a><a href=""><img id="img_action" src="images/Desktop-Background-1.jpg" alt=""></a><a href=""><img src="images/Desktop-Background-2.jpg" alt="" id="imgright"></a>
+                </div>
+                <div class="rightdiv">
+                </div>
+            </div>
+
+            <div id="numberList" class="numberList">
+            </div>
+        </div>
+
+        <div id="control" class="control">
+            <div id="pre" class="controlbtn"><img id="prebtn" src="images/backward.png" alt=""></div>
+            <div id="play" class="controlbtn"><img id="playbtn" src="images/pause.png" alt=""></div>
+            <div id="next" class="controlbtn"><img id="nextbtn" src="images/forwards.png" alt=""></div>
+        </div>
+    </div>
+    <script>
+        p4();
+    </script>
+
+    </div>
+    <div class="p5">
+        <h1>5. 製作2010~2020年日曆，如下顯示</h1>
+        <div class="selectdate">
+            <select name="year" id="year">
+            </select>年
+            <select name="mon" id="mon">
+            </select>月
+            <select name="day" id="day">
+            </select>日
+        </div>
+        <div class="detail">
+            <h3 class="des">Information</h3>
+            <p id="t_detail">您選擇的日期是2010年1月1日</p>
+        </div>
+    </div>
+    <script>
+        p5();
+        index();
+    </script>
+</body>
+
+</html>
