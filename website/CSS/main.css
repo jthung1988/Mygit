@@ -10,7 +10,10 @@ h1 {
     text-align: center;
 }
 body{
-    background-color: wheat;
+    background-image: url("../images/background.png");
+    /* background-color: wheat; */
+    background-repeat: no-repeat;
+    background-size: 100%;
     overflow: hidden;
 }
 
@@ -262,7 +265,7 @@ body{
     width : 400px;
     height: 400px;
     position: absolute;
-    top: 230px;
+    top: 200px;
     left: 250px;
 } 
 #center img{
@@ -303,4 +306,5 @@ body{
     height: 100px;
     position:absolute;
     border-radius:50px;
+    
 }

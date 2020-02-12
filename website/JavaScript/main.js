@@ -12,7 +12,7 @@ function f1() {
 }
 //p2==============
 function p2() {
-    var chinesscode = new RegExp(/[\u4e00-\u9fff]/);
+    var chinesscode = new RegExp(/^[\u4e00-\u9fff]*$/);
     var pwdCKcode = new RegExp(/(?=.*[a-zA-Z])(?=.*\d)(?=.*[!@#$%^&*])[a-z\d].{5,}/);
     var date1code = new RegExp(/(\d{4})[/](\d{2})[/](\d{2})/);
     var u_img_right = "images/Right.png"; u_img_wrong = "images/Wrong.png";
@@ -56,13 +56,7 @@ function p2() {
         if (date1code.test(this.value)) {
             var date = this.value.split("/");
             switch (parseInt(date[1])) {
-                case 1:
-                case 3:
-                case 5:
-                case 7:
-                case 8:
-                case 10:
-                case 12:
+                case 1: case 3: case 5: case 7: case 8: case 10: case 12:
                     if (date[2] <= 31) {
                         img_ckdate.src = u_img_right;
                         t_ckdate.innerHTML = t_r;
@@ -73,10 +67,7 @@ function p2() {
                         corrDate = 0;
                     }
                     break;
-                case 4:
-                case 6:
-                case 9:
-                case 11:
+                case 4: case 6: case 9: case 11:
                     if (date[2] <= 30) {
                         img_ckdate.src = u_img_right;
                         t_ckdate.innerHTML = t_r;
@@ -136,7 +127,7 @@ function p3() {
     //creat stars
     var divbackstar = document.getElementById("divbackstar");
     var divfrontstar = document.getElementById("divfrontstar");
-
+    var score;
     for (var i = 0; i < 5; i++) {
         var starimg = document.createElement("img");
         starimg.id = 'star' + i;
@@ -171,7 +162,7 @@ function resetbtn() {
         document.getElementById("score").innerHTML = "評分中..." + score;
     }
 }
-var score;
+
 var starShow = function () {
     var bstarid = document.getElementById(this.id).id;
     for (var i = bstarid.charAt(5); i >= 0; i--) {
@@ -197,16 +188,17 @@ var end = function () {
 
 
 //p4===================
-//configuration
+
 
 function p4() {
+    //configuration
     var btn_bgcolor = "yellow", btn_ckcolor = "red";
     var i_imgNumber = 7;
     //main==========================
     var conimg = document.querySelector("#control").querySelectorAll("img");
     var compose = document.querySelector(".compose");
     var composeimgs = compose.querySelectorAll("img");
-    var arrNum = [0, 1, 2];
+    var arrNum = [0, 1, 2];  //0=leftImg 1=mianImg 2=rightImg
     var playflag = false;
     var goplay;
     var url_actionImg = [];
@@ -217,7 +209,6 @@ function p4() {
         "http://www.microsoft.com", "http://www.youtube.com", "http://www.taipei.gov.tw",
         "http://www.facebook.com"]
     //numberList===============
-    var img_action = document.getElementById("img_action");
     var numberList = document.getElementById("numberList");
     var numwidth = 600 / i_imgNumber;
     for (var i = 0; i < i_imgNumber; i++) {
@@ -245,7 +236,6 @@ function p4() {
                     arrNum[i] = 0;
                 }
             }
-
             stopplay();
             checkplaybtn();
             showMainImg();
@@ -268,6 +258,7 @@ function p4() {
     }
     function startplay() {
         goplay = setInterval(nextbtnF, 2000);
+        playflag = true;
     }
     function stopplay() {
         clearInterval(goplay);
@@ -293,7 +284,6 @@ function p4() {
                 this.style.animation = "";
             })
         }
-        //showMainImg();
     }
     function btnplay() {
         playflag = false;
@@ -364,9 +354,10 @@ function p4() {
         }
     }
 
-    //buttonset==========================================
+    //Start==========================================
     showMainImg();
     startplay();
+    //Add motion to btn
     //prebtn
     conimg[0].addEventListener("mouseover", function () {
         this.src = "images/backward1.png";
@@ -448,19 +439,10 @@ var p5 = function () {
 
     function createdays() {
         switch (parseInt(mon.value)) {
-            case 1:
-            case 3:
-            case 5:
-            case 7:
-            case 8:
-            case 10:
-            case 12:
+            case 1: case 3: case 5: case 7: case 8: case 10: case 12:
                 maxdays = 31;
                 break;
-            case 4:
-            case 6:
-            case 9:
-            case 11:
+            case 4: case 6: case 9: case 11:
                 maxdays = 30
                 break;
             case 2:
@@ -502,29 +484,76 @@ var p5 = function () {
 }
 
 //decorate
-function index() {
-    mainbtn = document.getElementsByClassName("mainbtn");
-   
-    for (let i = 0; i < mainbtn.length; i++) {
-        console.log("==========123" + mainbtn);
-        mainbtn[i].addEventListener("mousedown", function () {
-            for (let j = 1; j <= mainbtn.length; j++) {
-                console.log('"p' + (j+1) + '"');
-                console.log(document.getElementsByClassName('"p' + (j+1) + '"'));
-                console.log(document.getElementsByClassName("p1"));
-                document.getElementsByClassName("p" + j)[0].style.display = "none";
-            }
-            document.getElementsByClassName("p" + (i+1))[0].style.display = "initial";
+//setdiv
+var cover = function () {
+    const PI = 3.1414926;
+    var disR = 300;
+    var subdiv = document.getElementsByClassName("sub");
+    var centerDiv = document.getElementById("center");
+    var centerImg = document.getElementById("centerImg");
+    var index = document.getElementById("index");
+    var x, y, rad;
+    //subdivPosition
 
+
+    var j = 0;
+    setInterval(function () {
+        j = j + 0.005;
+        for (let i = 0; i < subdiv.length; i++) {
+            rad = i * 2 * PI / 5;
+            x = 450 - 50 + Math.cos(rad + 54 / 360 * 2 * PI * j) * disR;
+            y = 400 - 50 + Math.sin(rad + 54 / 360 * 2 * PI * j) * disR;
+            subdiv[i].style.left = x + "px";
+            subdiv[i].style.top = y + "px";
+        }
+    }, 50);
+    // console.log("==========="+subdiv[i]);
+    //centerDivMotion
+
+    function centerMotion() {
+        centerImg.style.animation = "imgblow 3s ease 1";
+        setTimeout(function () {
+            centerImg.style.animation = "";
+            index.style.display = "none";
+        }, 2500);
+        for (let i = 0; i < subdiv.length; i++) {
+            subdiv[i].style.visibility = "hidden";
+        }
+    }
+    centerImg.addEventListener("mousedown", function () {
+        centerMotion();
+    })
+    // submotion
+    mainbtn = document.getElementsByClassName("mainbtn");
+    for (let i = 0; i < subdiv.length; i++) {
+        subdiv[i].addEventListener("mouseover", function () {
+            centerImg.src = "images/hw" + i + ".png";
+            centerImg.addEventListener("mousedown", function () {
+                for (let j = 1; j <= subdiv.length; j++) {
+                    document.getElementsByClassName("p" + j)[0].style.display = "none";
+                }
+                document.getElementsByClassName("p" + (i + 1))[0].style.display = "initial";
+            })
         })
     }
-}
 
+    //======================
+    var resetindex = function () {
+        for (let i = 0; i < subdiv.length; i++) {
+            subdiv[i].style.visibility = "initial";
+        }
+        index.style.display = "initial";
+        for (let j = 1; j <= subdiv.length; j++) {
+            document.getElementsByClassName("p" + j)[0].style.display = "none";
+        }
+    }
+    document.getElementById("bkindex").addEventListener("mousedown", resetindex)
+}
 //////////////////////////
-window.onload = function(){
-    var demo = document.getElementById("bkindex");
-        x = document.documentElement.clientWidth - demo.offsetWidth-20;
-        y = document.documentElement.clientHeight - demo.offsetHeight-20;
-        demo.style.left = x + 'px';
-        demo.style.top = y + 'px';
+window.onload = function () {
+    var backhome = document.getElementById("bkindex");
+    homepositionX = window.innerWidth - 100;
+    homepositionY = window.innerHeight-100;
+    backhome.style.left = homepositionX + 'px';
+    backhome.style.top = homepositionY + 'px';
 }
