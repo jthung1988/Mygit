@@ -1,0 +1,31 @@
+package tw.valckth.user.model;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class p_ProfileService {
+	
+	private p_ProfileDao profileDao;
+
+	public p_ProfileService(){
+	}
+	
+	@Autowired
+	public p_ProfileService(p_ProfileDao profileDao){
+		this.profileDao = profileDao;
+	}
+	
+	public p_Profile insertProfile(p_Profile profile) {
+		return profileDao.insertProfile(profile);
+	}
+	
+	public p_Profile queryProfile(String userId) {
+		return profileDao.queryProfile(userId);
+	}
+	
+	public boolean updateProfile(p_Profile profile) {
+		return profileDao.updateProfile(profile);
+	}
+
+}

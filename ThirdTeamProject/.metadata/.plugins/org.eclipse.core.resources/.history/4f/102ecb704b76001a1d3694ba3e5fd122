@@ -1,0 +1,21 @@
+package tw.valckth.hibernate.util;
+
+import org.hibernate.Session;
+
+import tw.valckth.user.model.Profile;
+
+public class Test {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		session.beginTransaction();
+		
+		
+		
+		session.getTransaction().commit();
+		session.close();
+		
+	}
+
+}

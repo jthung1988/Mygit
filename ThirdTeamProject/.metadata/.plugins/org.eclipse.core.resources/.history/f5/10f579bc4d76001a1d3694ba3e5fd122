@@ -1,0 +1,56 @@
+package tw.valckth.user.model;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class ProfileDao {
+	
+	private Session session;
+	@Autowired
+	public ProfileDao(@Qualifier("sessionFactory") SessionFactory sessionFactory) {
+		this.session = sessionFactory.getCurrentSession();
+	}
+	
+	public Profile insertProfile(Profile profile) {
+		Profile queryP = session.get(Profile.class, profile.getUserId());
+		if(queryP==null) {
+			session.save(profile);
+			return profile;
+		}else {
+			return null;
+		}
+	}
+
+	public boolean deleteProfile(String userId) {
+		Profile queryP = session.get(Profile.class, userId);
+		if(queryP!=null) {
+			session.delete(queryP);
+			return true;
+		}else {
+			return false;
+		}
+	}
+
+	public boolean updateProfile(Profile profile) {
+		Profile queryP = session.get(Profile.class, profile.getUserId());
+		if(queryP!=null) {
+			session.saveOrUpdate(profile);
+			return true;
+		}else {
+			return false;
+		}
+	}
+
+	public Profile queryProfile(String userId) {
+		Profile queryP = session.get(Profile.class, userId);
+		if(queryP!=null) {
+			return queryP;
+		}else {
+			return null;
+		}
+	}
+}

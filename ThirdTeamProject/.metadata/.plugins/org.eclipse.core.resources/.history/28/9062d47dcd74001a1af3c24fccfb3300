@@ -1,0 +1,40 @@
+package tw.valckth.user.model;
+
+import org.hibernate.Session;
+
+public class ProfileDao {
+	
+	private Session session;
+
+	public ProfileDao(Session session) {
+		this.session = session;
+	}
+	
+	public Profile insertProfile(Profile profile) {
+		Profile queryP = session.get(Profile.class, profile.getUserId());
+		if(queryP==null) {
+			session.save(profile);
+			return profile;
+		}else {
+			return null;
+		}
+	}
+
+	public boolean deleteProfile(String userId) {
+		Profile queryP = session.get(Profile.class, userId);
+		if(queryP!=null) {
+			session.delete(queryP);
+			return true;
+		}else {
+			return false;
+		}
+	}
+
+	public boolean updateProfile() {
+		
+	}
+
+	public Profile queryProfile() {
+
+	}
+}
