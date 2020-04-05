@@ -1,0 +1,29 @@
+//package tw.valckth.user.model;
+//
+//import org.hibernate.Session;
+//import org.hibernate.SessionFactory;
+//import org.springframework.beans.factory.annotation.Autowired;
+//import org.springframework.beans.factory.annotation.Qualifier;
+//import org.springframework.stereotype.Repository;
+//
+//@Repository
+//public class ProfileDao {
+//	private SessionFactory sessionFactory;
+//
+//	public ProfileDao(){}
+//	
+//	@Autowired
+//	public ProfileDao(@Qualifier("sessionFactory") SessionFactory sessionFactory) {
+//       this.sessionFactory = sessionFactory;
+//	}
+//	
+//	public Profile insert(Profile profile) {
+//		Session session = sessionFactory.getCurrentSession();
+//		
+//		if(profile!=null) {
+//			session.save(profile);
+//		}
+//		
+//		return profile;
+//	}
+//}

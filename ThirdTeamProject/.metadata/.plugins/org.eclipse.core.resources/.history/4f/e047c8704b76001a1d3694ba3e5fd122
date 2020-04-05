@@ -1,0 +1,24 @@
+package tw.valckth.hibernate.util;
+
+import javax.servlet.ServletRequestEvent;
+import javax.servlet.ServletRequestListener;
+import javax.servlet.annotation.WebListener;
+
+//@WebListener("/*")
+public class GetFactoryListener implements ServletRequestListener {
+
+    public GetFactoryListener() {
+        // TODO Auto-generated constructor stub
+    }
+
+    public void requestDestroyed(ServletRequestEvent sre)  { 
+         System.out.println("Factory closed.");
+         HibernateUtil.closeSessionFactory();
+    }
+
+    public void requestInitialized(ServletRequestEvent sre)  { 
+         System.out.println("Factory gotten.");
+         HibernateUtil.getSessionFactory();
+    }
+	
+}

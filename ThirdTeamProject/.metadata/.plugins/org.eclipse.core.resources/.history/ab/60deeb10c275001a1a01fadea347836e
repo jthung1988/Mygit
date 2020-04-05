@@ -1,0 +1,40 @@
+package tw.valckth.config;
+
+import javax.servlet.ServletContext;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.core.io.Resource;
+import org.springframework.web.context.support.ServletContextResource;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
+import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import org.springframework.web.servlet.view.XmlViewResolver;
+
+@Configuration
+@EnableWebMvc
+@ComponentScan(basePackages = "tw.valckth")
+public class SpringMvcJavaConfig implements WebMvcConfigurer{
+
+	@Autowired
+	private ServletContext application;
+	
+	@Override
+	public void addInterceptors(InterceptorRegistry registry) {
+		// TODO Auto-generated method stub
+		WebMvcConfigurer.super.addInterceptors(registry);
+	}
+
+	@Override
+	public void configureViewResolvers(ViewResolverRegistry registry) {
+		Resource resource = new ServletContextResource(application, "/WEB-INF/views.xml");
+		XmlViewResolver viewResolver = new XmlViewResolver();
+		viewResolver.setLocation(resource);
+		registry.viewResolver(viewResolver);
+	}
+	
+	
+
+}

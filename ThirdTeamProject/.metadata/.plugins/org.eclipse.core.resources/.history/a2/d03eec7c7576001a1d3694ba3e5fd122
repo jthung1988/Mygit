@@ -1,0 +1,20 @@
+package tw.valckth.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import tw.valckth.user.model.Profile;
+
+@Controller
+public class ValckthController {
+	
+	@RequestMapping(path = "/insertProfile" , method = RequestMethod.GET)
+	public String processAction() {
+		Profile p = new Profile();
+		p.setUserId("Maryid");
+		p.setUserName("Mary");
+		p.setUserPwd("mary");
+		return "Success";
+	}
+}

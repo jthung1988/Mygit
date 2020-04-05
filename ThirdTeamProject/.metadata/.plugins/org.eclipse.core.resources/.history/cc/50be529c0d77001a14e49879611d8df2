@@ -1,0 +1,5 @@
+package tw.valckth.user.model;
+
+public class pd_ProfileDetail {
+
+}
