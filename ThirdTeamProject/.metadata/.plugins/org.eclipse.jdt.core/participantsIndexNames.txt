@@ -1,8 +1,10 @@
 INDEX VERSION 1.131
 C:\GitHub\FinalProject\WorkSpace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1282577138.index
 \dmoe\src\main\java
-C:\GitHub\FinalProject\WorkSpace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3910759447.index
+C:\GitHub\FinalProject\WorkSpace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\267177471.index
 \dmoe\src\main\java
+C:\GitHub\FinalProject\WorkSpace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2900673696.index
+\GameShop\src
 C:\GitHub\FinalProject\WorkSpace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3291246070.index
 \Valckth\src
 C:\GitHub\FinalProject\WorkSpace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3508354841.index
@@ -21,7 +23,9 @@ C:\GitHub\FinalProject\WorkSpace\.metadata\.plugins\org.eclipse.jst.jsp.core\jsp
 \Valckth\src
 C:\GitHub\FinalProject\WorkSpace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1359916251.index
 \Valckth\src
+C:\GitHub\FinalProject\WorkSpace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\148563573.index
+\GameShop\src
 C:\GitHub\FinalProject\WorkSpace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3137810544.index
 \SpringMVCWebProject\src
-C:\GitHub\FinalProject\WorkSpace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\267177471.index
+C:\GitHub\FinalProject\WorkSpace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3910759447.index
 \dmoe\src\main\java

@@ -177,3 +177,103 @@ Contains: Missing org.springframework:spring:jar:javadoc:5.2.5.RELEASE
 2020-04-03 23:43:23,845 19344277 [r-169: Building] WARN  nternal.embedder.EclipseLogger  - Using platform encoding (MS950 actually) to copy filtered resources, i.e. build is platform dependent!
 2020-04-03 23:44:55,823 19436255 [r-165: Building] WARN  nternal.embedder.EclipseLogger  - Using platform encoding (MS950 actually) to copy filtered resources, i.e. build is platform dependent!
 2020-04-03 23:44:55,824 19436256 [r-165: Building] WARN  nternal.embedder.EclipseLogger  - Using platform encoding (MS950 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-04-06 21:31:36,635 0      [er-16: Building] WARN  nternal.embedder.EclipseLogger  - Using platform encoding (MS950 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-04-06 21:31:36,730 95     [er-16: Building] WARN  nternal.embedder.EclipseLogger  - Using platform encoding (MS950 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-04-06 22:44:14,839 4358204 [en Dependencies] ERROR venLaunchConfigurationListener  - Launch configuration Test references non-existing project Valckth.
+org.eclipse.core.runtime.CoreException: Launch configuration Test references non-existing project Valckth.
+	at org.eclipse.jdt.launching.JavaRuntime.abort(JavaRuntime.java:1838)
+	at org.eclipse.jdt.launching.JavaRuntime.getJavaProject(JavaRuntime.java:1713)
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.updateLaunchConfiguration(MavenLaunchConfigurationListener.java:55)
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.launchConfigurationChanged(MavenLaunchConfigurationListener.java:40)
+	at org.eclipse.debug.internal.core.LaunchManager$ConfigurationNotifier.run(LaunchManager.java:225)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.debug.internal.core.LaunchManager$ConfigurationNotifier.notify(LaunchManager.java:209)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.setDirty(LaunchConfigurationWorkingCopy.java:522)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.setAttribute(LaunchConfigurationWorkingCopy.java:410)
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.disable(MavenRuntimeClasspathProvider.java:347)
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.disable(MavenRuntimeClasspathProvider.java:373)
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.mavenProjectChanged(MavenLaunchConfigurationListener.java:72)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.notifyProjectChangeListeners(ProjectRegistryManager.java:821)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.applyMutableProjectRegistry(ProjectRegistryManager.java:985)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob.lambda$0(ProjectRegistryRefreshJob.java:149)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:179)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:153)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:101)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1375)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob.run(ProjectRegistryRefreshJob.java:84)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+2020-04-06 22:44:14,841 4358206 [en Dependencies] ERROR venLaunchConfigurationListener  - Launch configuration Test references non-existing project Valckth.
+org.eclipse.core.runtime.CoreException: Launch configuration Test references non-existing project Valckth.
+	at org.eclipse.jdt.launching.JavaRuntime.abort(JavaRuntime.java:1838)
+	at org.eclipse.jdt.launching.JavaRuntime.getJavaProject(JavaRuntime.java:1713)
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.updateLaunchConfiguration(MavenLaunchConfigurationListener.java:55)
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.launchConfigurationChanged(MavenLaunchConfigurationListener.java:40)
+	at org.eclipse.debug.internal.core.LaunchManager$ConfigurationNotifier.run(LaunchManager.java:225)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.debug.internal.core.LaunchManager$ConfigurationNotifier.notify(LaunchManager.java:209)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.setDirty(LaunchConfigurationWorkingCopy.java:522)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.setAttribute(LaunchConfigurationWorkingCopy.java:410)
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.disable(MavenRuntimeClasspathProvider.java:348)
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.disable(MavenRuntimeClasspathProvider.java:373)
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.mavenProjectChanged(MavenLaunchConfigurationListener.java:72)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.notifyProjectChangeListeners(ProjectRegistryManager.java:821)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.applyMutableProjectRegistry(ProjectRegistryManager.java:985)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob.lambda$0(ProjectRegistryRefreshJob.java:149)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:179)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:153)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:101)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1375)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob.run(ProjectRegistryRefreshJob.java:84)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+2020-04-06 22:44:14,848 4358213 [en Dependencies] ERROR venLaunchConfigurationListener  - Launch configuration Test references non-existing project Valckth.
+org.eclipse.core.runtime.CoreException: Launch configuration Test references non-existing project Valckth.
+	at org.eclipse.jdt.launching.JavaRuntime.abort(JavaRuntime.java:1838)
+	at org.eclipse.jdt.launching.JavaRuntime.getJavaProject(JavaRuntime.java:1713)
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.updateLaunchConfiguration(MavenLaunchConfigurationListener.java:55)
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.launchConfigurationChanged(MavenLaunchConfigurationListener.java:40)
+	at org.eclipse.debug.internal.core.LaunchManager$ConfigurationNotifier.run(LaunchManager.java:225)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.debug.internal.core.LaunchManager$ConfigurationNotifier.notify(LaunchManager.java:209)
+	at org.eclipse.debug.internal.core.LaunchManager.launchConfigurationChanged(LaunchManager.java:2147)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.writeNewFile(LaunchConfigurationWorkingCopy.java:375)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.doSave0(LaunchConfigurationWorkingCopy.java:258)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.doSave(LaunchConfigurationWorkingCopy.java:228)
+	at org.eclipse.debug.internal.core.LaunchConfigurationWorkingCopy.doSave(LaunchConfigurationWorkingCopy.java:186)
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.disable(MavenRuntimeClasspathProvider.java:349)
+	at org.eclipse.m2e.jdt.internal.launch.MavenRuntimeClasspathProvider.disable(MavenRuntimeClasspathProvider.java:373)
+	at org.eclipse.m2e.jdt.internal.launch.MavenLaunchConfigurationListener.mavenProjectChanged(MavenLaunchConfigurationListener.java:72)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.notifyProjectChangeListeners(ProjectRegistryManager.java:821)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.applyMutableProjectRegistry(ProjectRegistryManager.java:985)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob.lambda$0(ProjectRegistryRefreshJob.java:149)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.executeBare(MavenExecutionContext.java:179)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:153)
+	at org.eclipse.m2e.core.internal.embedder.MavenExecutionContext.execute(MavenExecutionContext.java:101)
+	at org.eclipse.m2e.core.internal.embedder.MavenImpl.execute(MavenImpl.java:1375)
+	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryRefreshJob.run(ProjectRegistryRefreshJob.java:84)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+2020-04-06 22:44:21,571 4364936 [er-53: Building] WARN  nternal.embedder.EclipseLogger  - Using platform encoding (MS950 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-04-06 22:44:21,575 4364940 [er-53: Building] WARN  nternal.embedder.EclipseLogger  - Using platform encoding (MS950 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-04-06 22:44:25,239 4368604 [er-59: Building] WARN  nternal.embedder.EclipseLogger  - Using platform encoding (MS950 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-04-06 22:44:25,242 4368607 [er-59: Building] WARN  nternal.embedder.EclipseLogger  - Using platform encoding (MS950 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-04-06 22:45:02,976 4406341 [er-55: Building] WARN  nternal.embedder.EclipseLogger  - Using platform encoding (MS950 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-04-06 22:45:02,978 4406343 [er-55: Building] WARN  nternal.embedder.EclipseLogger  - Using platform encoding (MS950 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-04-06 22:45:14,944 4418309 [er-57: Building] WARN  nternal.embedder.EclipseLogger  - Using platform encoding (MS950 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-04-06 22:45:14,954 4418319 [er-57: Building] WARN  nternal.embedder.EclipseLogger  - Using platform encoding (MS950 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-04-06 22:45:24,517 4427882 [er-60: Building] WARN  nternal.embedder.EclipseLogger  - Using platform encoding (MS950 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-04-06 22:45:24,519 4427884 [er-60: Building] WARN  nternal.embedder.EclipseLogger  - Using platform encoding (MS950 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-04-06 22:45:33,611 4436976 [er-60: Building] WARN  nternal.embedder.EclipseLogger  - Using platform encoding (MS950 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-04-06 22:45:33,612 4436977 [er-60: Building] WARN  nternal.embedder.EclipseLogger  - Using platform encoding (MS950 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-04-06 22:46:22,621 4485986 [er-53: Building] WARN  nternal.embedder.EclipseLogger  - Using platform encoding (MS950 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-04-06 22:46:22,623 4485988 [er-53: Building] WARN  nternal.embedder.EclipseLogger  - Using platform encoding (MS950 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-04-06 22:47:01,754 4525119 [er-58: Building] WARN  nternal.embedder.EclipseLogger  - Using platform encoding (MS950 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-04-06 22:47:01,758 4525123 [er-58: Building] WARN  nternal.embedder.EclipseLogger  - Using platform encoding (MS950 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-04-06 22:47:12,339 4535704 [er-54: Building] WARN  nternal.embedder.EclipseLogger  - Using platform encoding (MS950 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-04-06 22:47:12,340 4535705 [er-54: Building] WARN  nternal.embedder.EclipseLogger  - Using platform encoding (MS950 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-04-06 22:48:05,823 4589188 [er-59: Building] WARN  nternal.embedder.EclipseLogger  - Using platform encoding (MS950 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-04-06 22:48:05,825 4589190 [er-59: Building] WARN  nternal.embedder.EclipseLogger  - Using platform encoding (MS950 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-04-06 22:49:45,676 4689041 [er-54: Building] WARN  nternal.embedder.EclipseLogger  - Using platform encoding (MS950 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-04-06 22:49:45,677 4689042 [er-54: Building] WARN  nternal.embedder.EclipseLogger  - Using platform encoding (MS950 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-04-06 22:54:00,869 4944234 [er-59: Building] WARN  nternal.embedder.EclipseLogger  - Using platform encoding (MS950 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-04-06 22:54:00,873 4944238 [er-59: Building] WARN  nternal.embedder.EclipseLogger  - Using platform encoding (MS950 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-04-06 23:00:38,102 5341467 [er-68: Building] WARN  nternal.embedder.EclipseLogger  - Using platform encoding (MS950 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-04-06 23:00:38,104 5341469 [er-68: Building] WARN  nternal.embedder.EclipseLogger  - Using platform encoding (MS950 actually) to copy filtered resources, i.e. build is platform dependent!

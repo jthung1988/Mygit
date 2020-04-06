@@ -17,13 +17,13 @@
 --><!-- The contents of this file will be loaded for each web application -->
 <Context>
 	<Resource
-	  url="jdbc:sqlserver://localhost:1433;databaseName=Valckth"
+	  url="jdbc:sqlserver://localhost:1433;databaseName=GameShop"
 	  driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver"
 	  username="sa"
 	  password="1qaz2wsx"
 	  auth="Container"
 	  type="javax.sql.DataSource"
-	  name="connectSqlServerJdbc/Valckth"/>
+	  name="connectSqlServerJdbc/GameShop"/>
 
     <!-- Default set of monitored resources. If one of these changes, the    -->
     <!-- web application will be reloaded.                                   -->
