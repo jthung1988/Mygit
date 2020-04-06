@@ -1,11 +1,14 @@
 JAVA檔案:ThirdTeamProject
 
+<<<<<<< HEAD
 一、
 開啟Eclipse，Workspace直接選擇ThirdTeamProject
 
 
 或是
 二、
+=======
+>>>>>>> c132c00157fa956c1ec33df83fd87ffa5cd78664
 直接	import>>General>>Projects from Folder or Archive>>next
 	右上Directory選擇 ThirdTeamProject資料夾
 	選擇 Servers(註1)和Valckth
