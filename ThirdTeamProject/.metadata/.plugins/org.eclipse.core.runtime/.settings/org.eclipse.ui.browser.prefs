@@ -1,4 +1,0 @@
-browser-choice=1
-browsers=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<web-browsers current\="2">\r\n<system/>\r\n<external location\="C\:\\Program Files\\Internet Explorer\\iexplore.exe" name\="Internet Explorer"/>\r\n<external location\="C\:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe" name\="Chrome"/>\r\n</web-browsers>
-eclipse.preferences.version=1
-internalWebBrowserHistory=http\://localhost\:8080/Valckth/WEB-INF/classes/tw/valckth/controller/ValckthController.java|*|http\://localhost\:8080/Valckth/TestServlet|*|http\://localhost\:8080/Valckth/WEB-INF/classes/tw/valckth/hibernate/util/Test.java|*|file\:/C\:/GitHub/FinalProject/WorkSpace/.metadata/.plugins/org.springsource.ide.eclipse.commons.gettingstarted/dashboard/1585752383514/index.html|*|file\:/C\:/Users/Tai/.p2/pool/plugins/org.springsource.ide.eclipse.commons.gettingstarted_3.9.12.202003180611-RELEASE/resources/welcome/index.html|*|

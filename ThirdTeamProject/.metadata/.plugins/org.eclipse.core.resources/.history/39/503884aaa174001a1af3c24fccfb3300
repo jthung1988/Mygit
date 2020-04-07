@@ -1,5 +1,0 @@
-package tw.valckth.hibernate.util;
-
-public class HibernateUtil {
-
-}

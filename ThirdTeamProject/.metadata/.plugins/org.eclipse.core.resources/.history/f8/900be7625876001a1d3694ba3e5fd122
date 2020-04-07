@@ -1,5 +1,0 @@
-package tw.valckth.config;
-
-public class PersistenceJNDIConfig {
-
-}

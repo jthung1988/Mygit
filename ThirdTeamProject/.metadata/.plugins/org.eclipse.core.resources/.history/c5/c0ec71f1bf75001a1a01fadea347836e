@@ -1,5 +1,0 @@
-datasource.driverClassName=com.microsoft.sqlserver.jdbc.SQLServerDriver
-datasource.url=jdbc:sqlserver://localhost:1433;databaseName=valckth
-datasource.username=sa
-datasource.password=1qaz2wsx
-jndi.url=connectSqlServerJdbc/Valckth

@@ -1,8 +1,0 @@
-1586066033716	Move 'Success.jsp' to 'pages'
-1586069945638	Rename type 'Profile'
-1586069954984	Rename type 'ProfileDao'
-1586069965054	Rename type 'ProfileService'
-1586071540100	Rename type 'p_Profile'
-1586071547181	Rename type 'p_ProfileDao'
-1586071552624	Rename type 'p_ProfileService'
-1586071559505	Rename type 'pd_ProfileDetail'

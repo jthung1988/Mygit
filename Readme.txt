@@ -12,7 +12,7 @@ JAVA檔案:ThirdTeamProject
 *要改>>	  password="1qaz2wsx"
 	  auth="Container"
 	  type="javax.sql.DataSource"
-	  name="connectSqlServerJdbc/Valckth"/>
+	  name="connectSqlServerJdbc/GameShop"/>
 
 
 
@@ -20,10 +20,7 @@ JAVA檔案:ThirdTeamProject
 2.
 import>>General>>Projects from Folder or Archive>>next
 右上Directory選擇 ThirdTeamProject資料夾
-選擇 Valckth
+選擇 GameShop
 finish
 ==============================================================
 網頁如用其他IDE設計可放在根目錄下，搭配TempCSS和TempJS，設計好之後再丟進WebContainer
-
-==========
-valckth是我挑七個人的名字亂取的(七大醉?)，以後配合好聽的專案名字做修改
