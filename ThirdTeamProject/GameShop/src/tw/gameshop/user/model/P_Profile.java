@@ -24,8 +24,8 @@ public class P_Profile {
 	@Column(name = "userToken")
 	private String userToken;
 	
-	@Column(name = "nickName")
-	private String nickName;
+	@Column(name = "nickname")
+	private String nickname;
 	
 	@Column(name = "mail")
 	private String mail;
@@ -41,12 +41,12 @@ public class P_Profile {
 	
 	public P_Profile() {}
 	
-	public P_Profile(String userId, String userName, String userPwd, String nickName,
+	public P_Profile(String userId, String userName, String userPwd, String nickname,
 			String mail) {
 		this.userId = userId;
 		this.userName = userName;
 		this.userPwd = userPwd;
-		this.nickName = nickName;
+		this.nickname = nickname;
 		this.mail = mail;
 	}
 
@@ -114,12 +114,12 @@ public class P_Profile {
 		this.userToken = userToken;
 	}
 
-	public String getNickName() {
-		return nickName;
+	public String getnickname() {
+		return nickname;
 	}
 
-	public void setNickName(String nickName) {
-		this.nickName = nickName;
+	public void setnickname(String nickname) {
+		this.nickname = nickname;
 	}
 
 	public void setGender(Character gender) {
