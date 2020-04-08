@@ -10,7 +10,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = "tw.valckth")
+@ComponentScan(basePackages = "tw.gameshop")
 public class SpringMvcJavaConfig implements WebMvcConfigurer{
 
 	@Bean

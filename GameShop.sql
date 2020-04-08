@@ -15,9 +15,11 @@ CREATE TABLE Profile(
   userId VARCHAR(50) NOT NULL PRIMARY KEY,
   userName NVARCHAR(50) NOT NULL,
   userPwd VARCHAR(50) NOT NULL,
-  mail VARCHAR(100) NOT NULL,
+  userToken VARCHAR(100),
+  nickName NVARCHAR(50) NOT NULL UNIQUE,
+  mail VARCHAR(100) NOT NULL UNIQUE,
   gender VARCHAR(1) ,
-  userImg VARBINARY(MAX) DEFAULT 0
+  userImg VARBINARY(MAX)
 )
 GO
 
@@ -29,9 +31,11 @@ CREATE TABLE ProfileDetail(
 )
 GO
 
+--DROP TABLE ProfileDetail
 --DROP TABLE Profile
-INSERT INTO Profile(userId,userName,userPwd,mail)
-VALUES('uid1','unm1','upd1','u1@')
+
+INSERT INTO Profile(userId,userName,nickName,userPwd,mail)
+VALUES('uid1','unm1','nn1','upd1','u1@')
 
 INSERT INTO ProfileDetail(userId)
 VALUES('uid1')
