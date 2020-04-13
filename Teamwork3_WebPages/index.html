@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="zn-TW">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -55,25 +54,44 @@
                 <input type="submit" value="Register" name="register" class="registerbutton" />
             </form>
         </div>
+
+        <!-- login form -->
         <div class="loginForm">
             <fieldset>
-                <legend>登入</legend>
-                <form action="#Servlet" method="POST">
-                    <label for="userId">User ID:</label><input id="userId" type="text" placeholder="ID" />
-                    <label for="userPwd">Passowrd:</label><input id="userPwd" type="password" placeholder="Password" />
+                <legend>Login Form</legend>
+                <form action="#login" method="POST">
+                    <label for="userId">User ID:</label><input type="text" name="userId"><br />
+                    <label for="userPwd">Password:</label><input type="password" name="userPwd"><br />
                 </form>
+                <button>Comfirm</button><button>Cancel</button>
             </fieldset>
         </div>
-        <div class="registerFrom">
-            <fieldset>
-                <legend>註冊</legend>
-                <form action="#Servlet" method="POST">
-                    <label for="userId">User ID:</label><input id="userId" type="text" placeholder="ID"/>
-                    <label for="userPwd">Passowrd:</label><input id="userPwd" type="password" placeholder="Password"/>
-                    <label for="ckPwd">Check Passowrd:</label><input id="ckPwd" type="password"/>
-                </form>
-            </fieldset>
 
+        <!-- register form -->
+        <div class="registerForm">
+            <fieldset>
+                <legend>Login Form</legend>
+                <form action="#login" method="POST">
+                    <label>Required</label><br/>
+                    <label for="userId">ID:</label><input type="text" name="userId"><br />
+                    <label for="userName">Name:</label><input type="text" name="userName"><br />
+                    <label for="nickName">Nick Name:</label><input type="text" name="nickName"><br />
+                    <label for="gender">Gender:</label>
+                    <input type="radio" name="gender" value="m">male
+                    <input type="radio" name="gender" value="f">female
+                    <input type="radio" name="gender" value="o">other<br />
+
+                    <label for="userPwd">Password:</label><input type="password" name="userPwd"><br />
+                    <label for="checkPwd">Re-enter Password:</label><input type="password" name="checkPwd"><br />
+                    <label for="mail">E-mail:</label><input type="text" name="mail"><br />
+                    <hr>
+                    <label></label><br/>
+                    <label for="birthday">Birthday:</label><input type="text" name="birthday"><br />
+                    <label for="address">Address:</label><input type="text" name="address"><br />
+                    <label for="phone">Phone:</label><input type="text" name="phone"><br />
+                </form>
+                <button>Comfirm</button><button>Cancel</button>
+            </fieldset>
         </div>
 
         <!--Trailer & Title-->
