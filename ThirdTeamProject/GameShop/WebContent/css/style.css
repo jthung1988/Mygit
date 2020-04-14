@@ -366,7 +366,8 @@ fieldset{
 }
 
 .loginForm input,
-.registerForm input{
+.registerForm input,
+#registerconfirm{
     font-size: 20px;
     width:200px;
 }
