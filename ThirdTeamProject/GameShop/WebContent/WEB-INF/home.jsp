@@ -1,3 +1,4 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="zn-TW">
 
@@ -5,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>index.html</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/style.css">
     <!-- Bootstrap CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Sen&display=swap" rel="stylesheet">
@@ -68,10 +69,10 @@
             <fieldset>
                 <legend>Login Form</legend>
                 <form action="#login" method="POST">
-                    <label for="userId">User ID:</label><input type="text" name="userId"><br />
+                    <label for="userAccount">User Account:</label><input type="text" name="userAccount"><br />
                     <label for="userPwd">Password:</label><input type="password" name="userPwd"><br />
                 </form>
-                <button id="loginComfirm">Comfirm</button><button class="cancel_btn">Cancel</button>
+                <button id="loginconfirm">confirm</button><button class="cancel_btn">Cancel</button>
             </fieldset>
         </div>
     </div>
@@ -80,27 +81,27 @@
 
             <div class="registerForm">
                 <fieldset>
-                    <legend>Login Form</legend>
-                    <form action="#login" method="POST">
+                    <legend>Register Form</legend>
+                    <form action="processProfile" method="POST">
                         <label>Required</label><br />
-                        <label for="userId">ID:</label><input type="text" id="userId" name="userId"><br />
+                        <label for="userAccount">Account:</label><input type="text" id="userAccount" name="userAccount"><br />
                         <label for="userName">Name:</label><input type="text" id="userName" name="userName"><br />
                         <label for="nickName">Nick Name:</label><input type="text" id="nickName" name="nickName"><br />
-                        <label>Gender:</label>
-                        <input type="radio" class="gender" name="gender" value="m" checked="checked"><label class="gender">male</label>
-                        <input type="radio" class="gender" name="gender" value="f"><label class="gender">female</label>
-                        <input type="radio" class="gender" name="gender" value="o"><label class="gender">other</label><br />
-
                         <label for="userPwd">Password:</label><input type="password" id="userPwd" name="userPwd"><br />
                         <label for="checkPwd">Password:</label><input type="password" id="checkPwd" name="checkPwd" placeholder="Re-enter Password"><br />
                         <label for="mail">E-mail:</label><input type="text" id="mail" name="mail"><br />
                         <hr>
                         <label>Detail</label><br />
+                        <label>Gender:</label>
+                        <input type="radio" class="gender" name="gender" value="m" checked="checked"><label class="gender">male</label>
+                        <input type="radio" class="gender" name="gender" value="f"><label class="gender">female</label>
+                        <input type="radio" class="gender" name="gender" value="o"><label class="gender">other</label><br />
                         <label for="birthday">Birthday:</label><input type="text" id="birthday" name="birthday"><br />
                         <label for="address">Address:</label><input type="text" id="address" name="address"><br />
                         <label for="phone">Phone:</label><input type="text" id="phone" name="phone"><br />
+                        <button id="registerconfirm">Confirm</button><input class="cancel_btn" type="button" value="Cancel">
                     </form>
-                    <button id="registerComfirm">Comfirm</button><button class="cancel_btn">Cancel</button><button class="fill">fill</button>
+                    <button class="fill">fill</button>
                 </fieldset>
             </div>
         </div>
@@ -167,7 +168,7 @@
 
             <fieldset>
                 <figure>
-                    <!--輪播暫時接Steam網址, 之後須修改成商品頁編碼-->
+                    <!--è¼ªæ­æ«ææ¥Steamç¶²å, ä¹å¾é ä¿®æ¹æååé ç·¨ç¢¼-->
                     <a id="mainUrl" href="https://store.steampowered.com/">
                         <canvas id="myCanvas" width="460" height="215">
                             <img id="mainImg1" src="img/sale1.jpg" style="display: none">
@@ -232,7 +233,7 @@
     <!--footer-->
     <footer>
         <div class="foot">
-            <H2>©COPYRIGHT 2020 EEIT112 Team3</H2>
+            <H2>Â©COPYRIGHT 2020 EEIT112 Team3</H2>
             <H6>All copyrights and trademarks are the property of their respective owners.</H6>
         </div>
     </footer>
@@ -240,7 +241,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script>
-        // 背景圖的煙霧效果
+        // èæ¯åççé§ææ
         (function () {
             const canvas = document.querySelector('.bg-canvas');
             const ctx = canvas.getContext('2d');
@@ -258,7 +259,7 @@
             }
         })();
 
-        //  Sales輪播圖片
+        //  Salesè¼ªæ­åç
         var nowAD = 0;
         var maxAD = 5;
         var intervalAD;
@@ -306,7 +307,7 @@
             } else if (tempAD > nowAD) {
                 backFlag = true;
             }
-            // 可導向網頁的圖片連結(之後再接網頁內的商品)
+            // å¯å°åç¶²é çåçé£çµ(ä¹å¾åæ¥ç¶²é å§çåå)
             // document.getElementById("mainUrl").href = "https://store.steampowered.com";
             let nowImg = document.getElementById("mainImg" + nowAD);
             for (let x = 0; x <= 460; x++) {
@@ -411,6 +412,7 @@
         
         $(".fill").click(function(){
             $("#userId").val("uid");
+            $("#userAccount").val("account");
             $("#userName").val("unm");
             $("#nickName").val("nnm");
             $("#userPwd").val("pwd");

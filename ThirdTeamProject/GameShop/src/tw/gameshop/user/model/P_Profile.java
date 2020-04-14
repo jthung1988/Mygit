@@ -4,6 +4,8 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -12,8 +14,12 @@ import javax.persistence.Table;
 @Table(name = "profile")
 public class P_Profile {
 
-	@Id @Column(name = "userId")
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY) 
+	@Column(name = "userId")
 	private String userId;
+	
+	@Column(name = "userAccount")
+	private String userAccount;
 	
 	@Column(name = "userName")
 	private String userName;
@@ -41,9 +47,9 @@ public class P_Profile {
 	
 	public P_Profile() {}
 	
-	public P_Profile(String userId, String userName, String userPwd, String nickname,
+	public P_Profile(String userAccount, String userName, String userPwd, String nickname,
 			String mail) {
-		this.userId = userId;
+		this.userAccount = userAccount;
 		this.userName = userName;
 		this.userPwd = userPwd;
 		this.nickname = nickname;
@@ -56,6 +62,22 @@ public class P_Profile {
 
 	public void setUserId(String userId) {
 		this.userId = userId;
+	}
+
+	public String getUserAccount() {
+		return userAccount;
+	}
+
+	public void setUserAccount(String userAccount) {
+		this.userAccount = userAccount;
+	}
+
+	public String getNickname() {
+		return nickname;
+	}
+
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
 	}
 
 	public String getUserName() {

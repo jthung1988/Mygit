@@ -12,7 +12,8 @@ USE GameShop
 GO
 
 CREATE TABLE Profile(
-  userId VARCHAR(50) NOT NULL PRIMARY KEY,
+  userId INT NOT NULL PRIMARY KEY IDENTITY(1,1),
+  userAccount VARCHAR(50) NOT NULL UNIQUE,
   userName NVARCHAR(50) NOT NULL,
   userPwd VARCHAR(50) NOT NULL,
   userToken VARCHAR(100),
@@ -24,10 +25,10 @@ CREATE TABLE Profile(
 GO
 
 CREATE TABLE ProfileDetail(
-  userId VARCHAR(50) NOT NULL FOREIGN KEY REFERENCES Profile(userId),
-  address VARCHAR(100),
+  userId INT NOT NULL FOREIGN KEY REFERENCES Profile(userId),
+  address NVARCHAR(MAX),
   birthday DATE,
-  phone VARCHAR(15)
+  phone VARCHAR(100)
 )
 GO
 

@@ -23,6 +23,11 @@ public class TestController {
 		this.pservice = pservice;
 	}
 	
+	@RequestMapping("/index.html")
+	public String toHome() {
+		return "home";
+	}
+	
 	@RequestMapping(path = "/processImg" , method = RequestMethod.POST)
 	public String processImageAction(@RequestParam("userImg") MultipartFile userImg) {
 		try {
@@ -38,21 +43,18 @@ public class TestController {
 	}
 	@RequestMapping(path = "/processProfile" , method = RequestMethod.POST)
 	public String processAction(
-			@RequestParam("userId") String userId,
+			@RequestParam("userAccount") String userAccount,
 			@RequestParam("userName") String userName,
 			@RequestParam("userPwd") String userPwd,
-			@RequestParam("nickname") String nickname,
-			@RequestParam("mail") String mail,
-			@RequestParam("userImg") MultipartFile userImg) {
+			@RequestParam("nickName") String nickname,
+			@RequestParam("mail") String mail) {
 		
 		System.out.println("Controller start");
 		try {
-			P_Profile p = new P_Profile(userId, userName, userPwd, nickname, mail);
-			p.setUserImg(userImg.getBytes());
+			P_Profile p = new P_Profile(userAccount, userName, userPwd, nickname, mail);
+//			p.setUserImg(userImg.getBytes());
 			PD_ProfileDetail pd = new PD_ProfileDetail("add4", "2020-03-03", "0900123456");
 			pservice.createProfile(p,pd);
-//			P_Profile qp = pservice.queryProfile("uid1");
-//			System.out.println(qp.getUserName());
 			System.out.println("process end");
 			return "Success";
 		}catch(Exception e){
@@ -60,6 +62,5 @@ public class TestController {
 			e.printStackTrace();
 			return "";
 		}
-		
 	}
 }

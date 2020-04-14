@@ -1,7 +1,10 @@
 package tw.gameshop.user.model;
 
+import java.util.List;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
@@ -21,10 +24,11 @@ public class P_ProfileDao {
 	
 	public P_Profile createProfile(P_Profile profile, PD_ProfileDetail profileDetail) {
 		Session session = sessionFactory.getCurrentSession();
-		P_Profile qProfile = session.get(P_Profile.class, profile.getUserId());
-		
+		Query<P_Profile> qProfile = session.createQuery("from P_Profile WHERE userAccount=:account",P_Profile.class);
+		qProfile.setParameter("account", profile.getUserAccount());
+		List<P_Profile> profilelist = qProfile.getResultList();
 		try {
-			if(qProfile==null) {
+			if(profilelist.isEmpty()) {
 				profileDetail.setProfile(profile);
 				profile.setProfileDetail(profileDetail);
 				System.out.println("is nll?:\n" + profile.getUserId() + "\n" + profileDetail);
