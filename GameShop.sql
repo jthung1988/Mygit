@@ -34,6 +34,8 @@ GO
 
 --DROP TABLE ProfileDetail
 --DROP TABLE Profile
+--DELETE FROM ProfileDetail 
+--DELETE FROM Profile
 
 INSERT INTO Profile(userId,userName,nickName,userPwd,mail)
 VALUES('uid1','unm1','nn1','upd1','u1@')
