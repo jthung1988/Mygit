@@ -46,7 +46,7 @@
             <li><a href="#">SHOP</a>
             <li><a href="#" style="padding-right: 20px; padding-left: 25px;">COMMENT</a>
             <li><a href="#">CHAT</a>
-                <input type="button" class="loginz" value="LOGIN">
+                <a href="#"><input type="button" class="loginz" value="${login_btn}"/></a>
         </ul>
     </nav>
 
@@ -68,18 +68,19 @@
         <div class="loginForm">
             <fieldset>
                 <legend>Login Form</legend>
-                <form action="#login" method="POST">
+                <form action="processLogin" method="POST">
                     <label for="userAccount">User Account:</label><input type="text" name="userAccount"><br />
                     <label for="userPwd">Password:</label><input type="password" name="userPwd"><br />
+                    <button id="loginconfirm">confirm</button><input type="button" class="cancel_btn" value="Cancel">
                 </form>
-                <button id="loginconfirm">confirm</button><button class="cancel_btn">Cancel</button>
+                
             </fieldset>
         </div>
     </div>
         <!-- register form -->
         <div class="registerDiv">
 
-            <div class="registerForm">
+            <div class="registerForm">Cancel
                 <fieldset>
                     <legend>Register Form</legend>
                     <form action="processProfile" method="POST">
@@ -423,6 +424,14 @@
             $("#phone").val("0987141242");
 
         })
+
+		$(document).ready(function(){
+			if($(".loginz").val() == "Logout" ){
+	            $(".loginz").parent().attr("href","http://localhost:8080/GameShop/logout");
+	        }
+		})
+        
+        
 
     </script>
 

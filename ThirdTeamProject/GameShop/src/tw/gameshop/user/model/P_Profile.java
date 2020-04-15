@@ -136,18 +136,7 @@ public class P_Profile {
 		this.userToken = userToken;
 	}
 
-	public String getnickname() {
-		return nickname;
-	}
-
-	public void setnickname(String nickname) {
-		this.nickname = nickname;
-	}
-
 	public void setGender(Character gender) {
 		this.gender = gender;
 	}
-	
-	
-
 }
