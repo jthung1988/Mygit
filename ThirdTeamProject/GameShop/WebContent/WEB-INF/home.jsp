@@ -3,6 +3,7 @@
 <html lang="zn-TW">
 
 <head>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>index.html</title>
@@ -41,8 +42,8 @@
     <!--Navigator-->
     <nav>
         <ul class="ul1">
-            <li><a href="#">HOME</a>
-            <li><a href="#">NEWS</a>
+            <li><a href="http://localhost:8080/GameShop/index.html">HOME</a>
+            <li><a href="test">NEWS</a>
             <li><a href="#">SHOP</a>
             <li><a href="#" style="padding-right: 20px; padding-left: 25px;">COMMENT</a>
             <li><a href="#">CHAT</a>
@@ -366,18 +367,8 @@
         }
 
         //Login & Register Form
-        $(".loginz").click(function () {
-            $(".loginDiv").css({
-                "position": "absolute",
-                "display": "flex",
-                "z-index": "99999",
-                "top":$(document).scrollTop()+"px",
-                "height": "100vh",
-                "width":"100vw",
-                "align-items": "center"
-            });
-            $("html").css("overflow","hidden");
-        })
+        
+        
         $(".loginbutton").click(function () {
             $(".loginDiv").css({
                 "position": "absolute",
@@ -426,9 +417,24 @@
         })
 
 		$(document).ready(function(){
+            
 			if($(".loginz").val() == "Logout" ){
-	            $(".loginz").parent().attr("href","http://localhost:8080/GameShop/logout");
-	        }
+	            $(".loginz").parent().attr("href","http://localhost:8080/GameShop/logout/");
+	        }else{
+	        	$(".loginz").parent().attr("href","#");
+	        	$(".loginz").click(function () {
+		            $(".loginDiv").css({
+		                "position": "absolute",
+		                "display": "flex",
+		                "z-index": "99999",
+		                "top":$(document).scrollTop()+"px",
+		                "height": "100vh",
+		                "width":"100vw",
+		                "align-items": "center"
+		            })
+                    $("html").css("overflow","hidden");
+                })
+            }
 		})
         
         

@@ -3,6 +3,7 @@ package tw.gameshop.controller;
 import java.util.regex.Pattern;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,7 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.context.annotation.SessionScope;
+import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.multipart.MultipartFile;
 
 import tw.gameshop.user.model.PD_ProfileDetail;
@@ -18,25 +19,26 @@ import tw.gameshop.user.model.P_Profile;
 import tw.gameshop.user.model.P_ProfileService;
 
 @Controller
-public class TestController {
+@SessionAttributes(names = {"userAccount","userName","nickname"})
+public class SessionController {
 	
 	private P_ProfileService pservice;
 	Pattern regUserAccount = Pattern.compile("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).*{6,18}$");
 	Pattern regUserPwd = Pattern.compile("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).*{6,12}$");
 //	Pattern regUserName = Pattern.compile("^[\u4E00-\u9FFF]{2,}$");
 
-	public TestController() {}
+	public SessionController() {}
 	 
 	@Autowired
-	public TestController(P_ProfileService pservice) {
+	public SessionController(P_ProfileService pservice) {
 		this.pservice = pservice;
 	}
-	
+	//到首頁
 	@RequestMapping("/index.html")
 	public String toHome() {
 		return "home";
 	}
-	
+	//??
 	@RequestMapping(path = "/processImg" , method = RequestMethod.POST)
 	public String processImageAction(@RequestParam("userImg") MultipartFile userImg) {
 		try {
@@ -50,6 +52,7 @@ public class TestController {
 			return "";
 		}
 	}
+	//註冊
 	@RequestMapping(path = "/processProfile" , method = RequestMethod.POST)
 	public String processAction(
 			@RequestParam("userAccount") String userAccount,
@@ -74,32 +77,31 @@ public class TestController {
 		}
 		return "home";
 	}
-	
+	//登入
 	@RequestMapping(value = "/processLogin", method = RequestMethod.POST)
-	@SessionScope
 	public String processLogin(
 			@RequestParam(name = "userAccount")String userAccount,
 			@RequestParam(name = "userPwd")String userPwd,
-			Model model) {
+			Model model,HttpServletRequest request) {
 		System.out.println("processLogin");
 		P_Profile profile = null;
 //		if(regUserAccount.matcher(userAccount).matches() && regUserPwd.matcher(userPwd).matches()) {
 			profile = pservice.processLogin(userAccount,userPwd);
 //		}
 		if(profile != null) {
-			model.addAttribute("userAccount", profile.getUserAccount());
-			model.addAttribute("userName", profile.getUserName());
-			model.addAttribute("nickname", profile.getNickname());
-			
+			HttpSession session = request.getSession();
+			session.setAttribute("userAccount", profile.getUserAccount());
+			session.setAttribute("userName", profile.getUserName());
+			session.setAttribute("nickname", profile.getNickname());
 			System.out.println("Login Successfully");
 		}
-		return "home";
+		return "redirect:/index.html";
 	}
-	
-	@RequestMapping(value = "/logout", method = RequestMethod.GET)
-	public String processLogout(HttpServletRequest request) {
-		System.out.println("logout");
-		request.getSession().invalidate();
-		return "home";
+	//檢查session
+	@RequestMapping(value = "/test", method = RequestMethod.GET)
+	public String processTest() {
+		System.out.println("test");
+		
+		return "testsession";
 	}
 }

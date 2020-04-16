@@ -9,6 +9,6 @@
 <body>
 <h1>Account:${userAccount }</h1>
 <h1>User Name:${userName}</h1>
-<h1>Address:${address}</h1>
+<h1>Nickname:${nickname}</h1>
 </body>
 </html>

@@ -11,6 +11,7 @@ import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 
 @WebFilter("/*")
@@ -29,12 +30,14 @@ public class CheckLoginFilter implements Filter {
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 		HttpServletRequest req = (HttpServletRequest) request;
 		HttpServletResponse res = (HttpServletResponse) response;
-		if(req.getSession(false) == null) {
+		HttpSession session = req.getSession();
+		//檢查session  && 網頁右上登入按鈕文字
+		if(session.getAttribute("userAccount") == null) {
 			req.setAttribute("login_btn", "Login");
 		}else {
 			req.setAttribute("login_btn", "Logout");
 		}
-		chain.doFilter(request, response);
+		chain.doFilter(req, res);
 	}
 
 	public void init(FilterConfig fConfig) throws ServletException {
