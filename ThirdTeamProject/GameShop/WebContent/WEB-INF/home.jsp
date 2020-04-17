@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="zn-TW">
+<html lang="zh-TW">
 
 <head>
     
@@ -9,7 +9,6 @@
     <title>index.html</title>
     <link rel="stylesheet" href="css/style.css">
     <!-- Bootstrap CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Sen&display=swap" rel="stylesheet">
     <style>
         footer {
@@ -84,8 +83,9 @@
             <div class="registerForm">Cancel
                 <fieldset>
                     <legend>Register Form</legend>
-                    <form action="processProfile" method="POST">
+                    <form action="processProfile" method="POST" enctype="multipart/form-data">
                         <label>Required</label><br />
+                        <a class="aImg" href="#"><img src="img/coda.jpg" alt="" width="200px" height="200px"></a><input class="userImg" type="file" name="userImg" hidden="hidden"><br/>
                         <label for="userAccount">Account:</label><input type="text" id="userAccount" name="userAccount"><br />
                         <label for="userName">Name:</label><input type="text" id="userName" name="userName"><br />
                         <label for="nickName">Nick Name:</label><input type="text" id="nickName" name="nickName"><br />
@@ -101,7 +101,9 @@
                         <label for="birthday">Birthday:</label><input type="text" id="birthday" name="birthday"><br />
                         <label for="address">Address:</label><input type="text" id="address" name="address"><br />
                         <label for="phone">Phone:</label><input type="text" id="phone" name="phone"><br />
+                        
                         <button id="registerconfirm">Confirm</button><input class="cancel_btn" type="button" value="Cancel">
+                        
                     </form>
                     <button class="fill">fill</button>
                 </fieldset>
@@ -241,7 +243,6 @@
     </footer>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
     <script>
         // èæ¯åççé§ææ
         (function () {
@@ -368,7 +369,13 @@
 
         //Login & Register Form
         
-        
+        $(".aImg").click(function(){
+			$(".userImg").click();
+        });
+        $(".userImg").change(function(){
+            console.log($(".userImg").val());
+            $(".aImg img").attr("src",$(".userImg").val());
+        })
         $(".loginbutton").click(function () {
             $(".loginDiv").css({
                 "position": "absolute",
